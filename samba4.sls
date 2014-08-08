@@ -99,7 +99,7 @@ samba4-install:
 samba-provision:
   cmd:
     - run
-    - name: /usr/local/samba/bin/samba-tool domain provision --use-rfc2307 --domain vhgroup.corp  --realm vhgroup --adminpass 54linux* && touch /usr/local/samba/.samba.provisioned
+    - name: /usr/local/samba/bin/samba-tool domain provision --use-rfc2307 --domain vhgroup.corp  --realm vhgroup --dns-backend SAMBA_INTERNAL --adminpass 54linux* && touch /usr/local/samba/.samba.provisioned
     - unless: test -f /usr/local/samba/.samba.provisioned
     - require:
       - cmd: samba4-install
