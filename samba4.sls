@@ -67,7 +67,7 @@ localtime:
       - require:
           - pkg: dependencias
 
-localtime:
+fstab:
       file:
         - managed
         - name: /etc/fstab
