@@ -67,6 +67,18 @@ localtime:
       - require:
           - pkg: dependencias
 
+localtime:
+      file:
+        - managed
+        - name: /etc/fstab
+        - source: salt://fstab
+        - user: root
+        - group: root
+        - mode: 644
+        - require:
+            - pkg: dependencias
+
+
 samba4-source:
     file:
        - managed
